@@ -3,3 +3,6 @@
 
 import re
 import csv
+
+
+error_list = []
