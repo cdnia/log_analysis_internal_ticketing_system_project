@@ -5,4 +5,4 @@ import re
 import csv
 
 
-error_list = []
+error_list, user_list = [], []
