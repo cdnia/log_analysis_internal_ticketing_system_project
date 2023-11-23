@@ -13,4 +13,5 @@ with open("syslog.log", "r") as flog:
         my_reg_error = re.search(r"ticky: ERROR ([\w' ]*) \(([\w .]*)\)", current_line)
         my_reg_user = re.search(r"ticky: INFO ([\w ]*) \[#\d+] \(([\w .]*)\)", current_line)
         if my_reg_error is not None:
-            pass
+            reg_group_error = my_reg_error.groups()[0].strip()
+
