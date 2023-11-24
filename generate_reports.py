@@ -15,3 +15,4 @@ with open("syslog.log", "r") as flog:
         if my_reg_error is not None:
             reg_group_error, reg_group_username = my_reg_error.groups()[0].strip(), my_reg_error.groups()[1].strip()
             one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
+            one_error_dict = next((k for k in error_list if k["Error"] == reg_group_error), False)
