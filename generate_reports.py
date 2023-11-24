@@ -17,4 +17,4 @@ with open("syslog.log", "r") as flog:
             one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
             one_error_dict = next((k for k in error_list if k["Error"] == reg_group_error), False)
             if not one_user_dict:
-                pass
+                perso_dict = {"Username": reg_group_username, "INFO": 0, "ERROR": 1}
