@@ -14,3 +14,4 @@ with open("syslog.log", "r") as flog:
         my_reg_user = re.search(r"ticky: INFO ([\w ]*) \[#\d+] \(([\w .]*)\)", current_line)
         if my_reg_error is not None:
             reg_group_error, reg_group_username = my_reg_error.groups()[0].strip(), my_reg_error.groups()[1].strip()
+            one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
