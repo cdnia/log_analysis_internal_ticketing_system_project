@@ -20,4 +20,4 @@ with open("syslog.log", "r") as flog:
                 perso_dict = {"Username": reg_group_username, "INFO": 0, "ERROR": 1}
                 user_list.append(perso_dict)
             else:
-                one_user_dict["ERROR"] = one_user_dict["ERROR"] + 1
+                one_user_dict["ERROR"] += 1
