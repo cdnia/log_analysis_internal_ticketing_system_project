@@ -19,3 +19,5 @@ with open("syslog.log", "r") as flog:
             if not one_user_dict:
                 perso_dict = {"Username": reg_group_username, "INFO": 0, "ERROR": 1}
                 user_list.append(perso_dict)
+            else:
+                pass
