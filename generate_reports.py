@@ -18,3 +18,4 @@ with open("syslog.log", "r") as flog:
             one_error_dict = next((k for k in error_list if k["Error"] == reg_group_error), False)
             if not one_user_dict:
                 perso_dict = {"Username": reg_group_username, "INFO": 0, "ERROR": 1}
+                user_list.append(perso_dict)
