@@ -23,3 +23,4 @@ with open("syslog.log", "r") as flog:
                 one_user_dict["ERROR"] += 1
             if not one_error_dict:
                 error_dict = {"Error": reg_group_error, "Count": 1}
+                error_list.append(error_dict)
