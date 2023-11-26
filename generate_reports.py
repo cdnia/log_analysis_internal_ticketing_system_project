@@ -22,4 +22,4 @@ with open("syslog.log", "r") as flog:
             else:
                 one_user_dict["ERROR"] += 1
             if not one_error_dict:
-                pass
+                error_dict = {"Error": reg_group_error, "Count": 1}
