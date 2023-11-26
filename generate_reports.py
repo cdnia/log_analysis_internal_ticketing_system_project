@@ -24,3 +24,5 @@ with open("syslog.log", "r") as flog:
             if not one_error_dict:
                 error_dict = {"Error": reg_group_error, "Count": 1}
                 error_list.append(error_dict)
+            else:
+                pass
