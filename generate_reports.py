@@ -25,4 +25,4 @@ with open("syslog.log", "r") as flog:
                 error_dict = {"Error": reg_group_error, "Count": 1}
                 error_list.append(error_dict)
             else:
-                one_error_dict["Count"] = one_error_dict["Count"] + 1
+                one_error_dict["Count"] += 1
