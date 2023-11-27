@@ -26,3 +26,5 @@ with open("syslog.log", "r") as flog:
                 error_list.append(error_dict)
             else:
                 one_error_dict["Count"] += 1
+        elif my_reg_user is not None:
+            pass
