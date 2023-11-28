@@ -27,4 +27,4 @@ with open("syslog.log", "r") as flog:
             else:
                 one_error_dict["Count"] += 1
         elif my_reg_user is not None:
-            reg_group_error = my_reg_user.groups()[0].strip()
+            reg_group_error, reg_group_username = my_reg_user.groups()[0].strip(), my_reg_user.groups()[1].strip()
