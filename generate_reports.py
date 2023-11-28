@@ -28,3 +28,4 @@ with open("syslog.log", "r") as flog:
                 one_error_dict["Count"] += 1
         elif my_reg_user is not None:
             reg_group_error, reg_group_username = my_reg_user.groups()[0].strip(), my_reg_user.groups()[1].strip()
+            one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
