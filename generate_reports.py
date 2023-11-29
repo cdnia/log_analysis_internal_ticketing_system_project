@@ -31,4 +31,5 @@ with open("syslog.log", "r") as flog:
             one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
             if not one_user_dict:
                 perso_dict = {"Username": reg_group_username, "INFO": 1, "ERROR": 0}
+                user_list.append(perso_dict)
 
