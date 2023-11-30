@@ -34,6 +34,7 @@ with open("syslog.log", "r") as flog:
                 user_list.append(perso_dict)
             else:
                 one_user_dict["INFO"] += 1
-    error_list = sorted(error_list, key=lambda v1: v1["Count"], reverse=True)
+    error_list = sorted(error_list, key=lambda v1: v1["Count"], reverse=True)  # the reverse=True specify a descending
+    # order
     user_list = sorted(user_list, key=lambda v1: v1["Username"])
     # we store the dictionaries in two different files: error_message.csv and user_statistics.csv
