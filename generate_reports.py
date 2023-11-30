@@ -34,3 +34,5 @@ with open("syslog.log", "r") as flog:
                 user_list.append(perso_dict)
             else:
                 one_user_dict["INFO"] += 1
+    error_list = sorted(error_list, key=lambda v1: v1["Count"], reverse=True)
+
