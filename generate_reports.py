@@ -40,3 +40,4 @@ with open("syslog.log", "r") as flog:
     # we store the dictionaries in two different files: error_message.csv and user_statistics.csv
     with open("error_message.csv", "w", newline='') as r1, open("user_statistics.csv", "w", newline='') as r2:
         r1_fieldnames = error_list[0].keys()
+        r2_fieldnames = user_list[0].keys()
