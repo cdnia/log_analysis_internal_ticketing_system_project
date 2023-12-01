@@ -39,4 +39,4 @@ with open("syslog.log", "r") as flog:
     user_list = sorted(user_list, key=lambda v1: v1["Username"])
     # we store the dictionaries in two different files: error_message.csv and user_statistics.csv
     with open("error_message.csv", "w", newline='') as r1, open("user_statistics.csv", "w", newline='') as r2:
-        pass
+        r1_fieldnames = error_list[0].keys()
