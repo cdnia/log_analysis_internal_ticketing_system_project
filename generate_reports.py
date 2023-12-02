@@ -41,3 +41,4 @@ with open("syslog.log", "r") as flog:
     with open("error_message.csv", "w", newline='') as r1, open("user_statistics.csv", "w", newline='') as r2:
         r1_fieldnames, r2_fieldnames = error_list[0].keys(), user_list[0].keys()
         r1_writer = csv.DictWriter(r1, r1_fieldnames)
+        r2_writer = csv.DictWriter(r2, r2_fieldnames)
