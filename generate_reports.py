@@ -42,3 +42,4 @@ with open("syslog.log", "r") as flog:
         r1_fieldnames, r2_fieldnames = error_list[0].keys(), user_list[0].keys()
         r1_writer, r2_writer = csv.DictWriter(r1, r1_fieldnames), csv.DictWriter(r2, r2_fieldnames)
         r1_writer.writeheader()
+        r2_writer.writeheader()
