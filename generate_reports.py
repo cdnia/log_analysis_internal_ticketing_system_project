@@ -4,7 +4,6 @@
 import re
 import csv
 
-
 error_list, user_list = [], []
 
 with open("syslog.log", "r") as flog:
@@ -17,7 +16,9 @@ with open("syslog.log", "r") as flog:
             one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
             one_error_dict = next((k for k in error_list if k["Error"] == reg_group_error), False)
             if not one_user_dict:
-                perso_dict = {"Username": reg_group_username, "INFO": 0, "ERROR": 1}
+                perso_dict = {"Username": reg_group_username, "INFO": 0,
+                              "ERROR": 1}  # we initialize the error count to 1 and the info count to 0 because we
+                # are in the case of an error
                 user_list.append(perso_dict)
             else:
                 one_user_dict["ERROR"] += 1
