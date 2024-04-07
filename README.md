@@ -3,4 +3,6 @@
 Consider an internal ticketing system that is used by serveral teams in a enterprise.This system logs
 events in a file called `syslog.log`.The file `syslog.log` contains useful information about tickets
 such as who submitted the ticket, the ticket type (ERROR or INFO), when it was submitted, the ticket 
-message, etc.
+message, etc.<br>  
+We write a python script called `generate_reports.py` that analyze the `syslog.log` file and produce reports depending on the information 
+was extracted.
