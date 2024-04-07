@@ -4,8 +4,8 @@ Consider an internal ticketing system that is used by serveral teams in a enterp
 events in a file called `syslog.log`.The file `syslog.log` contains useful information about tickets
 such as who submitted the ticket, the ticket type (ERROR or INFO), when it was submitted, the ticket 
 message, etc.<br>  
-We write a python script called `generate_reports.py` that analyze the `syslog.log` file and produce reports depending on the information 
-was extracted.<br>  
+We write a python script called `generate_reports.py` that analyze the `syslog.log` file and produce 
+reports depending on the information was extracted.<br>  
 ## Goal of the project
 The role of our script is to generate two reports from the `syslog.log` file :
 - the first report is a file called `error_message.csv`.
