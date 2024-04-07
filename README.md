@@ -8,3 +8,4 @@ We write a python script called `generate_reports.py` that analyze the `syslog.l
 was extracted.<br>  
 ## Goal of the project
 The role of our script is to generate two reports from the `syslog.log` file :
+- the first report is a file called `error_message.csv`.
