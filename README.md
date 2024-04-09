@@ -10,6 +10,6 @@ reports depending on the information was extracted.<br>
 ## Goal of the project
 The role of our script is to generate two reports from the `syslog.log` file :
 - the first report is a file called `error_message.csv`. Within that file there is a record of error
-messages and their corresponding counts sorted in descending order,without
-referencing users.
+messages and their corresponding counts sorted with this criteria : the most common error to the least 
+common error, without referencing users.
 - the second report is a file called `user_statistics.csv`.
