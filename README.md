@@ -19,3 +19,5 @@ In summary, the objective of the single script is to generate the two reports on
 any user intervention.We can accomplish that by using cron jobs in a linux environment.
 ## HOW TO RUN IT
 - First check that the `syslog.log` file and the file `generate_reports.py` are in same directory.
+- The python version used in this project is 3.11.2, you can install a python version (note: install at least Python 
+3.11).
