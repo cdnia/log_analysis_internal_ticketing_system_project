@@ -22,3 +22,4 @@ any user intervention.We can accomplish that by using cron jobs in a linux envir
 - The python version used in this project is 3.11.2, you can install a python version (note: install at least Python 
 3.11) by following instructions to install the latest version of python for your OS in the 
 [python website](https://www.python.org/downloads/).
+- You can run the script by doing `python generate_reports.py` or `./generate_reports.py` (in a linux environment).
