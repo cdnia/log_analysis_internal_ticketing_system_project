@@ -24,3 +24,4 @@ any user intervention.We can accomplish that by using cron jobs in a linux envir
 [python website](https://www.python.org/downloads/).
 - You can run the script by doing `python generate_reports.py` or `./generate_reports.py` (in a linux environment).
 - Yan can use cron jobs to run the script periodically and automatically.
+For example, you can put this line in a crontab to execute the script at 4 PM (16:00) every Sunday:
