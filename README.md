@@ -26,4 +26,4 @@ any user intervention.We can accomplish that by using cron jobs in a linux envir
 - Yan can use cron jobs to run the script periodically and automatically.
 For example, you can put this line in a crontab to execute the script at 4 PM (16:00) every Sunday:
 0 16 * * 0 /path_to_the_script/generate_reports.py
-replace path_to_the_script by the actual full path to the directory containing the script.
+note : replace path_to_the_script by the actual full path to the directory containing the script.
