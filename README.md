@@ -22,8 +22,8 @@ any user intervention.We can accomplish that by using cron jobs in a linux envir
 - The python version used in this project is 3.11.2, you can install a python version (note: install at least Python 
 3.11) by following instructions to install the latest version of python for your OS in the 
 [python website](https://www.python.org/downloads/).
-- You can run the script by doing `python generate_reports.py` or `./generate_reports.py` (in a linux environment).
-- Yan can use cron jobs to run the script periodically and automatically.
+- You can run the script by doing `python generate_reports.py` or `./generate_reports.py`.
+- Yan can use cron jobs to run the script periodically and automatically in a linux environment.
 For example, you can put this line in a crontab to execute the script at 4 PM (16:00) every Sunday:
 0 16 * * 0 /path_to_the_script/generate_reports.py
-Note : replace "path_to_the_script" by the actual full path to the directory containing the script.
+Note : replace "path_to_the_script" by the actual full path of the directory containing the script.
