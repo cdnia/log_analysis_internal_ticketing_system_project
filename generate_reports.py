@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-
+# our imports.re will allow us to do regex and csv will allow us
+# to work with csv format.
 import re
 import csv
 
