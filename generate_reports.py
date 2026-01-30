@@ -4,10 +4,17 @@
 # to work with csv format.
 import re
 import csv
+from pathlib import Path
+
+
+log_file = Path("syslog.log")
+error_csv = Path("error_message.csv")
+user_csv = Path("user_statistics.csv")
 
 error_list, user_list = [], []
 
-with open("syslog.log", "r") as flog:
+
+with log_file.open("r") as flog:
     for i in flog:
         current_line = i.strip()  # we strip the current log line.
         # we declare two regex variables respectively for error and info patterns.
