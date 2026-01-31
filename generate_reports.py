@@ -7,6 +7,7 @@ import csv
 from pathlib import Path
 
 
+# Define file paths using pathlib
 log_file = Path("syslog.log")
 error_csv = Path("error_message.csv")
 user_csv = Path("user_statistics.csv")
