@@ -33,7 +33,7 @@ if not log_file.exists():
     print(f"Error: Log file '{log_file}' not found!")
     sys.exit(1)
     
-with log_file.open("r") as flog:
+with log_file.open("r", encoding="utf-8") as flog:
     for i in flog:
         current_line = i.strip()  # we strip the current log line.
         # we declare two regex variables respectively for error and info patterns.
