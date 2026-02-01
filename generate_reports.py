@@ -16,6 +16,7 @@ user_csv = Path("user_statistics.csv")
 error_list, user_list = [], []
 
 
+# Validate that log file exists before processing
 if not log_file.exists():
     print(f"Error: Log file '{log_file}' not found!")
     sys.exit(1)
