@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+"""
+Log Analysis Tool for Internal Ticketing System.
+
+This script analyzes syslog files from an internal ticketing system and
+generates two CSV reports:
+1. error_message.csv - Error messages sorted by frequency (descending)
+2. user_statistics.csv - User statistics sorted by username (ascending)
+
+Usage:
+    python generate_reports.py
+"""
+
 
 # our imports.re will allow us to do regex and csv will allow us
 # to work with csv format.
