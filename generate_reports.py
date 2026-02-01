@@ -18,7 +18,7 @@ error_list, user_list = [], []
 
 if not log_file.exists():
     print(f"Error: Log file '{log_file}' not found!")
-    exit(1)
+    sys.exit(1)
     
 with log_file.open("r") as flog:
     for i in flog:
