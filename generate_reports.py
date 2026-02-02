@@ -68,7 +68,7 @@ with log_file.open("r", encoding="utf-8") as flog:
     error_list = sorted(error_list, key=lambda v1: v1["Count"], reverse=True)  # the reverse=True specify a descending sorting order
     user_list = sorted(user_list, key=lambda v1: v1["Username"])
     # we store the dictionaries in two different files: error_message.csv and user_statistics.csv
-    with error_csv.open("w", newline='') as r1, user_csv.open("w", newline='') as r2:
+    with error_csv.open("w", newline='', encoding="utf-8") as r1, user_csv.open("w", newline='', encoding="utf-8") as r2:
         r1_fieldnames, r2_fieldnames = error_list[0].keys(), user_list[0].keys()
         r1_writer, r2_writer = csv.DictWriter(r1, r1_fieldnames), csv.DictWriter(r2, r2_fieldnames)
         r1_writer.writeheader(), r2_writer.writeheader()
