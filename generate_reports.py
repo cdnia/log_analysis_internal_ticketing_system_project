@@ -11,13 +11,12 @@ Usage:
     python generate_reports.py
 """
 
-
 # Standard library imports
 import csv
 import re
 import sys
-from pathlib import Path
 
+from pathlib import Path
 
 # Define file paths using pathlib
 log_file = Path("syslog.log")
