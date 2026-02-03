@@ -12,10 +12,9 @@ Usage:
 """
 
 
-# our imports.re will allow us to do regex and csv will allow us
-# to work with csv format.
-import re
+# Standard library imports
 import csv
+import re
 import sys
 from pathlib import Path
 
