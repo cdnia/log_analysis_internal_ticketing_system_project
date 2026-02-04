@@ -25,6 +25,11 @@ user_csv = Path("user_statistics.csv")
 
 error_list, user_list = [], []
 
+
+ERROR_PATTERN = r"ticky: ERROR ([\w' ]*) \(([\w .]*)\)"
+INFO_PATTERN = r"ticky: INFO ([\w ]*) \[#\d+] \(([\w .]*)\)"
+
+
 if __name__ == '__main__':
     # Validate that log file exists before processing
     if not log_file.exists():
@@ -35,8 +40,8 @@ if __name__ == '__main__':
         for line in flog:
             current_line = line.strip()  # we strip the current log line.
             # we declare two regex variables respectively for error and info patterns.
-            my_reg_error = re.search(r"ticky: ERROR ([\w' ]*) \(([\w .]*)\)", current_line)
-            my_reg_user = re.search(r"ticky: INFO ([\w ]*) \[#\d+] \(([\w .]*)\)", current_line)
+            my_reg_error = re.search(ERROR_PATTERN, current_line)
+            my_reg_user = re.search(INFO_PATTERN, current_line)
             if my_reg_error is not None:
                 reg_group_error, reg_group_username = my_reg_error.groups()[0].strip(), my_reg_error.groups()[1].strip()
                 one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
