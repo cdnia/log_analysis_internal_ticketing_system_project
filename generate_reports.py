@@ -43,26 +43,26 @@ if __name__ == '__main__':
             error_match = re.search(ERROR_PATTERN, current_line)
             info_match = re.search(INFO_PATTERN, current_line)
             if error_match is not None:
-                reg_group_error, reg_group_username = error_match.groups()[0].strip(), error_match.groups()[1].strip()
-                one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
-                one_error_dict = next((k for k in error_list if k["Error"] == reg_group_error), False)
+                message, username = error_match.groups()[0].strip(), error_match.groups()[1].strip()
+                one_user_dict = next((j for j in user_list if j["Username"] == username), False)
+                one_error_dict = next((k for k in error_list if k["Error"] == message), False)
                 if not one_user_dict:
-                    perso_dict = {"Username": reg_group_username, "INFO": 0,
+                    perso_dict = {"Username": username, "INFO": 0,
                                 "ERROR": 1}  # we initialize the error count to 1 and the info count to 0 because we
                     # are in the case of an error
                     user_list.append(perso_dict)
                 else:
                     one_user_dict["ERROR"] += 1
                 if not one_error_dict:
-                    error_dict = {"Error": reg_group_error, "Count": 1}
+                    error_dict = {"Error": message, "Count": 1}
                     error_list.append(error_dict)
                 else:
                     one_error_dict["Count"] += 1
             elif info_match is not None:
-                reg_group_error, reg_group_username = info_match.groups()[0].strip(), info_match.groups()[1].strip()
-                one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
+                message, username = info_match.groups()[0].strip(), info_match.groups()[1].strip()
+                one_user_dict = next((j for j in user_list if j["Username"] == username), False)
                 if not one_user_dict:
-                    perso_dict = {"Username": reg_group_username, "INFO": 1,
+                    perso_dict = {"Username": username, "INFO": 1,
                                 "ERROR": 0}  # we initialize the error count to 0 and the info count to 1 because we
                     # are in the case of an info
                     user_list.append(perso_dict)
