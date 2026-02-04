@@ -32,8 +32,8 @@ if __name__ == '__main__':
         sys.exit(1)
         
     with log_file.open("r", encoding="utf-8") as flog:
-        for i in flog:
-            current_line = i.strip()  # we strip the current log line.
+        for line in flog:
+            current_line = line.strip()  # we strip the current log line.
             # we declare two regex variables respectively for error and info patterns.
             my_reg_error = re.search(r"ticky: ERROR ([\w' ]*) \(([\w .]*)\)", current_line)
             my_reg_user = re.search(r"ticky: INFO ([\w ]*) \[#\d+] \(([\w .]*)\)", current_line)
