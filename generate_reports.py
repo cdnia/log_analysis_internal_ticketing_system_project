@@ -40,10 +40,10 @@ if __name__ == '__main__':
         for line in flog:
             current_line = line.strip()  # we strip the current log line.
             # we declare two regex variables respectively for error and info patterns.
-            my_reg_error = re.search(ERROR_PATTERN, current_line)
-            my_reg_user = re.search(INFO_PATTERN, current_line)
-            if my_reg_error is not None:
-                reg_group_error, reg_group_username = my_reg_error.groups()[0].strip(), my_reg_error.groups()[1].strip()
+            error_match = re.search(ERROR_PATTERN, current_line)
+            info_match = re.search(INFO_PATTERN, current_line)
+            if error_match is not None:
+                reg_group_error, reg_group_username = error_match.groups()[0].strip(), error_match.groups()[1].strip()
                 one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
                 one_error_dict = next((k for k in error_list if k["Error"] == reg_group_error), False)
                 if not one_user_dict:
@@ -58,8 +58,8 @@ if __name__ == '__main__':
                     error_list.append(error_dict)
                 else:
                     one_error_dict["Count"] += 1
-            elif my_reg_user is not None:
-                reg_group_error, reg_group_username = my_reg_user.groups()[0].strip(), my_reg_user.groups()[1].strip()
+            elif info_match is not None:
+                reg_group_error, reg_group_username = info_match.groups()[0].strip(), info_match.groups()[1].strip()
                 one_user_dict = next((j for j in user_list if j["Username"] == reg_group_username), False)
                 if not one_user_dict:
                     perso_dict = {"Username": reg_group_username, "INFO": 1,
