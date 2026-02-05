@@ -38,7 +38,7 @@ if __name__ == '__main__':
         
     with log_file.open("r", encoding="utf-8") as flog:
         for line in flog:
-            current_line = line.strip()  # we strip the current log line.
+            current_line = line.strip()  # Remove leading/trailing whitespace
             # we declare two regex variables respectively for error and info patterns.
             error_match = re.search(ERROR_PATTERN, current_line)
             info_match = re.search(INFO_PATTERN, current_line)
@@ -48,8 +48,7 @@ if __name__ == '__main__':
                 one_error_dict = next((k for k in error_list if k["Error"] == message), False)
                 if not one_user_dict:
                     perso_dict = {"Username": username, "INFO": 0,
-                                "ERROR": 1}  # we initialize the error count to 1 and the info count to 0 because we
-                    # are in the case of an error
+                                "ERROR": 1}
                     user_list.append(perso_dict)
                 else:
                     one_user_dict["ERROR"] += 1
@@ -63,8 +62,7 @@ if __name__ == '__main__':
                 one_user_dict = next((j for j in user_list if j["Username"] == username), False)
                 if not one_user_dict:
                     perso_dict = {"Username": username, "INFO": 1,
-                                "ERROR": 0}  # we initialize the error count to 0 and the info count to 1 because we
-                    # are in the case of an info
+                                "ERROR": 0}
                     user_list.append(perso_dict)
                 else:
                     one_user_dict["INFO"] += 1
