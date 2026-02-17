@@ -44,28 +44,26 @@ if __name__ == '__main__':
             info_match = re.search(INFO_PATTERN, current_line)
             if error_match is not None:
                 message, username = error_match.groups()[0].strip(), error_match.groups()[1].strip()
-                one_user_dict = next((j for j in user_list if j["Username"] == username), False)
-                one_error_dict = next((k for k in error_list if k["Error"] == message), False)
-                if not one_user_dict:
-                    perso_dict = {"Username": username, "INFO": 0,
-                                "ERROR": 1}
-                    user_list.append(perso_dict)
+                existing_user = next((j for j in user_list if j["Username"] == username), False)
+                existing_error = next((k for k in error_list if k["Error"] == message), False)
+                if not existing_user:
+                    new_user = {"Username": username, "INFO": 0, "ERROR": 1}
+                    user_list.append(new_user)
                 else:
-                    one_user_dict["ERROR"] += 1
-                if not one_error_dict:
-                    error_dict = {"Error": message, "Count": 1}
-                    error_list.append(error_dict)
+                    existing_user["ERROR"] += 1
+                if not existing_error:
+                    new_error = {"Error": message, "Count": 1}
+                    error_list.append(new_error)
                 else:
-                    one_error_dict["Count"] += 1
+                    existing_error["Count"] += 1
             elif info_match is not None:
                 message, username = info_match.groups()[0].strip(), info_match.groups()[1].strip()
-                one_user_dict = next((j for j in user_list if j["Username"] == username), False)
-                if not one_user_dict:
-                    perso_dict = {"Username": username, "INFO": 1,
-                                "ERROR": 0}
-                    user_list.append(perso_dict)
+                existing_user = next((j for j in user_list if j["Username"] == username), False)
+                if not existing_user:
+                    new_user = {"Username": username, "INFO": 1, "ERROR": 0}
+                    user_list.append(new_user)
                 else:
-                    one_user_dict["INFO"] += 1
+                    existing_user["INFO"] += 1
                     error_list = sorted(error_list, key=lambda v1: v1["Count"], reverse=True)
         user_list = sorted(user_list, key=lambda v1: v1["Username"])
         # we store the dictionaries in two different files: error_message.csv and user_statistics.csv
