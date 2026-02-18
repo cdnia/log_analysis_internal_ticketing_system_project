@@ -64,8 +64,8 @@ if __name__ == '__main__':
                     user_list.append(new_user)
                 else:
                     existing_user["INFO"] += 1
-                    error_list = sorted(error_list, key=lambda v1: v1["Count"], reverse=True)
-        user_list = sorted(user_list, key=lambda v1: v1["Username"])
+                    error_list = sorted(error_list, key=lambda error: error["Count"], reverse=True)
+        user_list = sorted(user_list, key=lambda user: user["Username"])
         # we store the dictionaries in two different files: error_message.csv and user_statistics.csv
         with error_csv.open("w", newline='', encoding="utf-8") as error_file, user_csv.open("w", newline='', encoding="utf-8") as user_file:
             error_fieldnames, user_fieldnames = error_list[0].keys(), user_list[0].keys()
