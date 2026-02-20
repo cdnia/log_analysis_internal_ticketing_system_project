@@ -15,7 +15,7 @@ Usage:
 import csv
 import re
 import sys
-
+from typing import Dict, List, Any
 from pathlib import Path
 
 # Define file paths using pathlib
