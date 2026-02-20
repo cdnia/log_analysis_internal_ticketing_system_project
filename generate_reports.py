@@ -19,9 +19,9 @@ from typing import Dict, List, Any
 from pathlib import Path
 
 # Define file paths using pathlib
-log_file = Path("syslog.log")
-error_csv = Path("error_message.csv")
-user_csv = Path("user_statistics.csv")
+log_file: Path = Path("syslog.log")
+error_csv: Path = Path("error_message.csv")
+user_csv: Path = Path("user_statistics.csv")
 
 error_list, user_list = [], []
 
