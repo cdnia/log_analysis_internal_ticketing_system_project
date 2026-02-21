@@ -23,7 +23,8 @@ log_file: Path = Path("syslog.log")
 error_csv: Path = Path("error_message.csv")
 user_csv: Path = Path("user_statistics.csv")
 
-error_list, user_list = [], []
+error_list: List[Dict[str, Any]] = []
+user_list: List[Dict[str, Any]] = []
 
 
 ERROR_PATTERN = r"ticky: ERROR ([\w' ]*) \(([\w .]*)\)"
