@@ -40,7 +40,6 @@ if __name__ == '__main__':
     with log_file.open("r", encoding="utf-8") as flog:
         for line in flog:
             current_line = line.strip()  # Remove leading/trailing whitespace
-            # we declare two regex variables respectively for error and info patterns.
             error_match = re.search(ERROR_PATTERN, current_line)
             info_match = re.search(INFO_PATTERN, current_line)
             if error_match is not None:
