@@ -43,7 +43,10 @@ if __name__ == '__main__':
             error_match = re.search(ERROR_PATTERN, current_line)
             info_match = re.search(INFO_PATTERN, current_line)
             if error_match is not None:
-                message, username = error_match.groups()[0].strip(), error_match.groups()[1].strip()
+                groups = error_match.groups()
+                message = groups[0].strip()
+                username = groups[1].strip()
+                
                 existing_user = next((user for user in user_list if user["Username"] == username), False)
                 existing_error = next((error for error in error_list if error["Error"] == message), False)
                 if not existing_user:
@@ -57,7 +60,10 @@ if __name__ == '__main__':
                 else:
                     existing_error["Count"] += 1
             elif info_match is not None:
-                message, username = info_match.groups()[0].strip(), info_match.groups()[1].strip()
+                groups = info_match.groups()
+                message = groups[0].strip()
+                username = groups[1].strip()
+                
                 existing_user = next((user for user in user_list if user["Username"] == username), False)
                 if not existing_user:
                     new_user = {"Username": username, "INFO": 1, "ERROR": 0}
