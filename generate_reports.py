@@ -73,6 +73,10 @@ if __name__ == '__main__':
         # Sort results after processing all log lines
         error_list = sorted(error_list, key=lambda error: error["Count"], reverse=True)
         user_list = sorted(user_list, key=lambda user: user["Username"])
+        # Validate that we have data to write
+        if not error_list or not user_list:
+            print("Warning: No valid log entries found to process!")
+            sys.exit(1)
         with error_csv.open("w", newline='', encoding="utf-8") as error_file, user_csv.open("w", newline='', encoding="utf-8") as user_file:
             error_fieldnames, user_fieldnames = error_list[0].keys(), user_list[0].keys()
             error_writer, user_writer = csv.DictWriter(error_file, error_fieldnames), csv.DictWriter(user_file, user_fieldnames)
