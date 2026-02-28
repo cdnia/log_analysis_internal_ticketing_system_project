@@ -64,7 +64,7 @@ if __name__ == '__main__':
                 message = groups[0].strip()
                 username = groups[1].strip()
                 
-                existing_user = next((user for user in user_list if user["Username"] == username), False)
+                existing_user = next((user for user in user_list if user["Username"] == username), None)
                 if not existing_user:
                     new_user = {"Username": username, "INFO": 1, "ERROR": 0}
                     user_list.append(new_user)
