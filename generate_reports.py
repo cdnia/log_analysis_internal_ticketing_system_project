@@ -73,6 +73,7 @@ if __name__ == '__main__':
         # Sort results after processing all log lines
         error_list = sorted(error_list, key=lambda error: error["Count"], reverse=True)
         user_list = sorted(user_list, key=lambda user: user["Username"])
+        
         # Validate that we have data to write
         if not error_list or not user_list:
             print("Warning: No valid log entries found to process!")
