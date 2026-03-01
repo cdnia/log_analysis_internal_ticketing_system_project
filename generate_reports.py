@@ -13,6 +13,7 @@ Usage:
 
 # Standard library imports
 import csv
+import logging
 import re
 import sys
 from typing import Dict, List, Any
