@@ -32,6 +32,14 @@ ERROR_PATTERN = r"ticky: ERROR ([\w' ]*) \(([\w .]*)\)"
 INFO_PATTERN = r"ticky: INFO ([\w ]*) \[#\d+] \(([\w .]*)\)"
 
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+
 if __name__ == '__main__':
     # Validate that log file exists before processing
     if not log_file.exists():
