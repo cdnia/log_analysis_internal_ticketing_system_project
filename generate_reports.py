@@ -45,7 +45,7 @@ if __name__ == '__main__':
     if not log_file.exists():
         logger.error(f"Log file '{log_file}' not found!")
         sys.exit(1)
-        
+
     with log_file.open("r", encoding="utf-8") as flog:
         for line in flog:
             current_line = line.strip()  # Remove leading/trailing whitespace
@@ -55,7 +55,7 @@ if __name__ == '__main__':
                 groups = error_match.groups()
                 message = groups[0].strip()
                 username = groups[1].strip()
-                
+
                 existing_user = next((user for user in user_list if user["Username"] == username), None)
                 existing_error = next((error for error in error_list if error["Error"] == message), None)
                 if not existing_user:
@@ -72,7 +72,7 @@ if __name__ == '__main__':
                 groups = info_match.groups()
                 message = groups[0].strip()
                 username = groups[1].strip()
-                
+
                 existing_user = next((user for user in user_list if user["Username"] == username), None)
                 if not existing_user:
                     new_user = {"Username": username, "INFO": 1, "ERROR": 0}
@@ -82,10 +82,10 @@ if __name__ == '__main__':
         # Sort results after processing all log lines
         error_list = sorted(error_list, key=lambda error: error["Count"], reverse=True)
         user_list = sorted(user_list, key=lambda user: user["Username"])
-        
+
         # Validate that we have data to write
         if not error_list or not user_list:
-            print("Warning: No valid log entries found to process!")
+            logger.warning("No valid log entries found to process!")
             sys.exit(1)
         with error_csv.open("w", newline='', encoding="utf-8") as error_file, user_csv.open("w", newline='', encoding="utf-8") as user_file:
             error_fieldnames, user_fieldnames = error_list[0].keys(), user_list[0].keys()
