@@ -90,5 +90,7 @@ if __name__ == '__main__':
         with error_csv.open("w", newline='', encoding="utf-8") as error_file, user_csv.open("w", newline='', encoding="utf-8") as user_file:
             error_fieldnames, user_fieldnames = error_list[0].keys(), user_list[0].keys()
             error_writer, user_writer = csv.DictWriter(error_file, error_fieldnames), csv.DictWriter(user_file, user_fieldnames)
-            error_writer.writeheader(), user_writer.writeheader()
-            error_writer.writerows(error_list), user_writer.writerows(user_list)
+            error_writer.writeheader()
+            user_writer.writeheader()
+            error_writer.writerows(error_list)
+            user_writer.writerows(user_list)
