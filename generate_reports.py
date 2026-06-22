@@ -43,7 +43,7 @@ logger = logging.getLogger(__name__)
 if __name__ == '__main__':
     # Validate that log file exists before processing
     if not log_file.exists():
-        logger.error(f"Log file '{log_file}' not found!")
+        logger.error("Log file '%s' not found!", log_file)
         sys.exit(1)
 
     with log_file.open("r", encoding="utf-8") as flog:
